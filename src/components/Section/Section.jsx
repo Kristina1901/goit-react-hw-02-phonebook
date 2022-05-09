@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Container from './Container';
+import Container from '../Container/Container';
 
 const Section = ({ nameForClass, children }) => (
   <section className={[`${nameForClass}`]}>

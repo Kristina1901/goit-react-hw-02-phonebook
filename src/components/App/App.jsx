@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Section from './Section';
-import Container from './Container';
-import ContactForm from './ContactForm';
-import Filter from './Filter';
-import ContactList from './ContactList';
+import Section from '../Section/Section';
+import Container from '../Container/Container';
+import ContactForm from '../ContactForm/ContactForm';
+import Filter from '../Filter/Filter';
+import ContactList from '../ContacList/ContactList';
+import s from '../App/App.module.css';
 
 class App extends Component {
   state = {
@@ -61,7 +62,7 @@ class App extends Component {
       <>
         <header>
           <Container>
-            <h1>Phonebook</h1>
+            <h1 className={s.title}>Phonebook</h1>
           </Container>
         </header>
         <Section nameForClass={'section'}>
@@ -70,7 +71,7 @@ class App extends Component {
           </div>
         </Section>
         <Section nameForClass={'sectionList'}>
-          <h2>Contacts</h2>
+          <h2 className={s.contact}>Contacts</h2>
           <Filter name={filter} onChange={this.setFilterValue} />
           {this.state.contacts[0] && ResultSearch[0] ? (
             <ContactList
@@ -78,7 +79,7 @@ class App extends Component {
               onDeleteContact={this.deleteContact}
             />
           ) : (
-            <p>There’s nothing here yet...</p>
+            <p className={s.text}>There’s nothing here yet...</p>
           )}
         </Section>
       </>

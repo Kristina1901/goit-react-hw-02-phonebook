@@ -1,3 +1,4 @@
+import s from '../ContactForm/ContactForm.module.css';
 import { Component } from 'react';
 class ContactForm extends Component {
   state = {
@@ -20,10 +21,11 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={s.form}>
         <label>
           Name
           <input
+            className={s.namefirst}
             value={this.state.name}
             onChange={this.handleGetValue}
             placeholder="Rosie Simpson"
@@ -34,9 +36,10 @@ class ContactForm extends Component {
             required
           />
         </label>
-        <label>
+        <label className={s.inputc}>
           Number
           <input
+            className={s.namesecond}
             value={this.state.number}
             onChange={this.handleGetValue}
             placeholder="459-12-56"
@@ -47,7 +50,7 @@ class ContactForm extends Component {
             required
           />
         </label>
-        <button type="submit" aria-label="button-submit">
+        <button className={s.button} type="submit" aria-label="button-submit">
           Add contact
         </button>
       </form>
