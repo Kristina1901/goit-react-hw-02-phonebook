@@ -78,16 +78,15 @@ class App extends Component {
           </div>
         </Section>
         <Section nameForClass={'sectionList'}>
-          <h2 className={s.contact}>Contacts</h2>
-          <Filter name={filter} onChange={this.setFilterValue} />
-          {this.state.contacts[0] && ResultSearch[0] ? (
+          <div className={s.wrapper}>
+            <h2 className={s.contact}>Filter Contacts</h2>
+            <Filter name={filter} onChange={this.setFilterValue} />
+            <h2 className={s.contact}>Contacts</h2>
             <ContactList
               contacts={ResultSearch}
               onDeleteContact={this.deleteContact}
             />
-          ) : (
-            <p></p>
-          )}
+          </div>
         </Section>
       </>
     );
