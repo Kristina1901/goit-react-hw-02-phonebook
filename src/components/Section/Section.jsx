@@ -11,4 +11,5 @@ export default Section;
 
 Section.propTypes = {
   nameForClass: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
 };

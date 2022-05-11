@@ -16,18 +16,18 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   repeatCheck = newName => {
-    return this.state.contacts.find(({ name }) => name === newName);
+    return this.state.contacts.find(
+      ({ name }) => name.toLowerCase() === newName
+    );
   };
   showNotification = name => {
     alert(`${name} is already in contacts`);
   };
   addContact = ({ name, number }) => {
-    if (!this.repeatCheck(name)) {
+    if (!this.repeatCheck(name.toLowerCase())) {
       const contact = {
         id: uuidv4(),
         name,
@@ -35,7 +35,7 @@ class App extends Component {
       };
 
       this.setState(({ contacts }) => ({
-        contacts: [contact, ...contacts],
+        contacts: [...contacts, contact],
       }));
       return;
     }
