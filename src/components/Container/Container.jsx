@@ -5,5 +5,5 @@ const Container = ({ children }) => {
 
 export default Container;
 Container.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
